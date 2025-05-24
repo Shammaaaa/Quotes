@@ -1,4 +1,4 @@
-package storage
+package handlers
 
 import "Quotes/internal/models"
 

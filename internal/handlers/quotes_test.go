@@ -54,7 +54,6 @@ func (m *MockStorage) Delete(id int) error {
 }
 
 func TestQuotesHandler(t *testing.T) {
-	// Инициализация
 	mockStorage := &MockStorage{}
 	handler := handlers.New(mockStorage)
 	router := mux.NewRouter()
@@ -146,7 +145,6 @@ func TestQuotesHandler(t *testing.T) {
 			t.Errorf("Ожидался статус %d, получен %d", http.StatusNoContent, w.Code)
 		}
 
-		// Проверяем, что цитата действительно удалена
 		if len(mockStorage.quotes) != 0 {
 			t.Errorf("Ожидалось 0 цитат после удаления, получено %d", len(mockStorage.quotes))
 		}
@@ -206,7 +204,7 @@ func TestQuotesHandler(t *testing.T) {
 	})
 
 	t.Run("GET /quotes/random - ошибка при отсутствии цитат", func(t *testing.T) {
-		// Очищаем хранилище
+
 		mockStorage.quotes = []models.Quote{}
 
 		req := httptest.NewRequest("GET", "/quotes/random", nil)

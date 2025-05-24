@@ -11,7 +11,8 @@ import (
 func main() {
 	r := mux.NewRouter()
 	store := storage.New()
-	handler := handlers.New(store)
+	handler := handlers.
+		New(store)
 
 	handler.Routes(r)
 
