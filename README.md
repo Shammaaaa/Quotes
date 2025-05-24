@@ -96,7 +96,7 @@ URL: /quotes?author=Confucius
 Ответ: 
 ```json
 {
-  "id": 3,
+  "id": 1,
   "author": "Confucius",
   "quote": "Life is really simple, but we insist on making it complicated.",
   "created_at": "2025-05-24T11:24:27.2535694+03:00"
